@@ -1,0 +1,27 @@
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+h1{
+    background-color: rgb(190, 0, 127);
+    width: fit-content;
+}
+
+div{
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+}
+
+a{
+    background-color: greenyellow;
+    width: 200px;
+}
+
+/* .sub{
+    border: 3px dotted red;
+} /*

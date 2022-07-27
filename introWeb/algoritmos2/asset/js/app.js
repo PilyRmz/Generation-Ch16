@@ -67,3 +67,34 @@ console.log(devolver);
 
 frutas.shift();
 console.log(frutas);
+
+
+//Pop
+//quita un elemento al final del arreglo
+let elementoBorrado = frutas.pop();
+console.log(frutas);
+console.log(elementoBorrado);
+//Unshift
+let devolver = frutas.unshift("Uva", "Pera");
+console.log(frutas);
+console.log(devolver);
+//Shift
+let devolver2 = frutas.shift();
+console.log(frutas);
+console.log(devolver2); */
+
+//Arreglo multidimensional
+const newArr = [ 1, 45, "Hola", "Adiós", true, null, [30, 31, 32],["Azul", "Amarillo", "Verde"]];
+console.log(newArr[7][1]);
+
+//Objetos
+const obj = {
+    nombre : "Pedro",
+    edad: 25,
+    color: "Azul",
+    hobbies: ["Leer", "Correr"]
+
+
+}
+console.log(obj.edad);
+console.log(obj.nombre);
