@@ -1,0 +1,75 @@
+/* body{
+    background-image: url(https://thumbs.dreamstime.com/b/fondo-repetido-de-los-tri%C3%A1ngulos-papel-pintado-abstracto-simple-con-las-figuras-geom%C3%A9tricas-modelo-superficial-incons%C3%BAtil-98954172.jpg);
+} */
+
+/* Narvar */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+   background-color: aquamarine;
+   height: 60px;
+   
+}
+
+ul{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 100px;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    font-size: 25px;
+    margin: 5px 15px;
+    border-radius: 5px; /* poner un borde redondo */
+}
+
+/* a:hover es una subclase ya establecida "hover" puedes darle efecto secundario */
+a:hover{
+    color: coral; /* cuando pasa el mouse sobre el menú cambia al color */
+    font-size: 30px; /* se hace grande las letras */
+    transition: 1s; /* el cambio o transición ya no se  ve tan brusco, es importante esta etiqueta */
+}
+
+.logo img{
+    width: 40px;
+}
+
+.contenedor{
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+   align-items: center; /* alinear vertical */
+   justify-content: space-between; /* alinear horizontal */
+}
+
+/* Banner */
+
+.banner{
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.banner img{
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover; /* mantener la proporción de la imagen y no se deforme */
+    object-position: bottom; /* ctl + espacio sale los menús */
+    /* shift + alt + a para comentar */
+}
+
+.banner img:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}

@@ -1,0 +1,74 @@
+.cuadro-padre{
+    background-color: rgb(253, 252, 189);
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+
+/* Nos permite alinear como en Word, en horizontal  */
+    justify-content: center;
+
+   /*  Nos permite alinear en vertical  */
+    align-items: center;
+
+}
+
+.cuadro{
+    height: 100px;
+    width: 150px;
+   margin: 50px 40px 30px 20px;
+   padding: 10px 30px;
+    border: 10px solid blue;
+    border-radius: 10px 20px 30px 40px;
+
+   /*  display: block;
+    display: none;
+    display: inline;
+    display: inline-block; */
+}
+
+.el-1{
+    background-color: blueviolet;
+    align-self: flex-start;
+    flex-grow: 3;
+    
+}
+
+.el-2{
+    background-color: rgb(232, 255, 28);
+    flex-grow: 1;
+ 
+}
+
+.el-3{
+    background-color: rgb(214, 33, 26);
+    align-self: flex-end;
+  
+}
+
+.el-4{
+    background-color: rgb(91, 236, 255);
+    
+}
+
+.el-5{
+    background-color: rgb(48, 37, 66);
+   
+}
+
+/* Introducción a Boostrap */
+
+.contenedor{
+    height: 200px;
+    background-color: #80cccc;
+    max-width: 1500px;
+    margin: 0 auto;
+
+}
+
+.fila{
+    display: flex;
+}
+
+.columna{
+    flex-grow: 1;
+}
