@@ -54,4 +54,6 @@ function división(a , b) {
 
 div = (10, 2)
 console.log("la división es" + div);
+
+
     
