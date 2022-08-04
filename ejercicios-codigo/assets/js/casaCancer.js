@@ -15,23 +15,34 @@ switch(medicion){
         function gCelsius(grados) {
             f= (1.8*grados)+32
             k= grados + 273.15
+            alert("los grados en Fahrenheit " + f + "°F" + "\n los grados en Kelvin" + k);
             
         }
+
+gCelsius(grados)
+
         break
     case 2: 
     function gFahrenheit(grados) {
         c = (grados - 32) * (5/9)
         k = (grados - 32) * (5/9) + 273.16
+        alert("los grados en Fahrenheit " + f + "°F" + "\n los grados en Kelvin" + k);
         
     }  
+
+gFahrenheit(grados)
+
     break
     
     case 3:
     function gKelvin(grados) {
         f = (1.8*(grados/273.15)) * 32
         c = grados - 273.15
-        
+        alert("los grados en Fahrenheit " + f + "°F" + "\n los grados en Kelvin" + k);
     }
+
+gKelvin(grados)
+
     break
 
     default:
