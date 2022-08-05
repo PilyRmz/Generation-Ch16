@@ -33,3 +33,6 @@ do{
     console.log("Do...While:" + numero);
     numero++;
 }while(numero < 5);
+
+
+
