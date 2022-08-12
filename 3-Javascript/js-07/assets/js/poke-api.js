@@ -1,6 +1,7 @@
 /* URL a consumir */
 
-const urlPokemon = "https://pokeapi.co/api/v2/pokemon/6";
+const urlPokemon = "https://pokeapi.co/api/v2/pokemon/";
+
 
 
 /* Elementos del DOM */
@@ -11,10 +12,81 @@ const idPokemon = document.getElementById("id-pokemon")
 
 const nombrePokemon = document.getElementById("nombre-pokemon")
 
+const listaHabilidades = document.getElementById("lista-habilidades")
 
+const listaTipos = document.getElementById("lista-tipos")
+
+const formulario = document.getElementById("buscador-pokemon")
+
+/* Eventos */
+
+formulario.addEventListener("submit", (e) =>{
+    e.preventDefault()
+
+    const inputPokemon = document.getElementById("busqueda-pokemon");
+    console.log(inputPokemon.value);
+
+    const nuevaBusqueda = urlPokemon + inputPokemon.value
+
+    console.log(urlPokemon);
+
+    obtenerPokemon(nuevaBusqueda);
+
+});
 
 /* Funciones */
 async function obtenerPokemon(url){
+
+    try {
+
+        const respuesta = await fetch(url)
+        const datos = await respuesta.json()
+    
+        const pokemon = {
+            nombre: datos.forms[0].name,
+            habilidades: datos.abilities,
+            id: datos.id,
+            tipo: datos.types,
+            imagen: datos.sprites.other["official-artwork"].front_default
+        }
+        
+        //imagen, nombre y ID 
+        imgPokemon.src = pokemon.imagen;
+        idPokemon.textContent =`ID: ${pokemon.id}`;
+        nombrePokemon.textContent = pokemon.nombre;
+      
+        // Habilidades
+        console.log(pokemon.habilidades.length);
+    
+        let template = ``
+    
+        for (let i = 0; i < pokemon.habilidades.length; i++) {
+            const nombreHabilidad = pokemon.habilidades[i].ability.name
+            console.log(nombreHabilidad);
+        
+            template += `<li class="list-group-item">${nombreHabilidad} </li>`
+        }
+                      
+        listaHabilidades.innerHTML = template;
+    
+        //Tipos
+        
+    
+        let templateTipos = ``
+    
+        pokemon.tipo.forEach( (tipo) => {
+            
+            const nombreTipo = tipo.type.name;
+            templateTipos += `<li class="list-group-item"> ${nombreTipo} </li>`
+            
+        })
+    
+        listaTipos.innerHTML = templateTipos;
+        
+    } catch (e) {
+        alert("pokemon no válido")
+        
+    }
 
     const respuesta = await fetch(url)
     const datos = await respuesta.json()
@@ -22,17 +94,45 @@ async function obtenerPokemon(url){
     const pokemon = {
         nombre: datos.forms[0].name,
         habilidades: datos.abilities,
-        numero: datos.id,
+        id: datos.id,
         tipo: datos.types,
-        imagen: datos.sprites.other["official-artwork"].front_defaults
+        imagen: datos.sprites.other["official-artwork"].front_default
     }
     
+    //imagen, nombre y ID 
     imgPokemon.src = pokemon.imagen;
     idPokemon.textContent =`ID: ${pokemon.id}`;
     nombrePokemon.textContent = pokemon.nombre;
+  
+    // Habilidades
+    console.log(pokemon.habilidades.length);
+
+    let template = ``
+
+    for (let i = 0; i < pokemon.habilidades.length; i++) {
+        const nombreHabilidad = pokemon.habilidades[i].ability.name
+        console.log(nombreHabilidad);
     
+        template += `<li class="list-group-item">${nombreHabilidad} </li>`
+    }
+                  
+    listaHabilidades.innerHTML = template;
+
+    //Tipos
+    
+
+    let templateTipos = ``
+
+    pokemon.tipo.forEach( (tipo) => {
+        
+        const nombreTipo = tipo.type.name;
+        templateTipos += `<li class="list-group-item"> ${nombreTipo} </li>`
+        
+    })
+
+    listaTipos.innerHTML = templateTipos;
+
 }
 
-obtenerPokemon(urlPokemon)
 
 
