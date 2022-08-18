@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class EjemploVariables {
     public static void main(String[] args) {
         String nombre = "Hugo";
